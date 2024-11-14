@@ -16,34 +16,32 @@
         h3 {
             font-size: 1.5em;
         }
-        /* 鏈接的樣式 */
+        /* 链接的样式 */
         a {
-            text-decoration: none; /* 去除默認的下劃線 */
-            color: #007BFF; /* 設置鏈接顏色 */
-            font-size: 1.2em; /* 增大字體 */
+            text-decoration: none; /* 去除默认的下划线 */
+            color: #007BFF; /* 设置链接颜色 */
+            font-size: 1.2em; /* 增大字体 */
         }
 
-        /* 滑鼠懸停時的高亮效果 */
+        /* 鼠标悬停时的高亮效果 */
         a:hover {
-            color: white; /* 懸停時文本顏色為白色 */
-            background-color: #007BFF; /* 懸停時背景顏色 */
-            padding: 5px; /* 增加內邊距 */
-            border-radius: 5px; /* 設置圓角 */
+            color: white; /* 悬停时文本颜色为白色 */
+            background-color: #007BFF; /* 悬停时背景颜色 */
+            padding: 5px; /* 增加内边距 */
+            border-radius: 5px; /* 设置圆角 */
         }
     </style>
 </head>
 <body>
 
-    <h1>用電量儀表板</h1>
+    <h1>三麟印刷用電量儀表板</h1>
+    <iframe src="power_consumption_chart.html" width="100%" height="600px" frameborder="0"></iframe>
 
-    <!-- 嵌入圖表 -->
-    <h3>各設備每日用電量</h3>
-    <iframe src="power_consumption_chart.html" width="100%" height="500px" frameborder="0"></iframe>
 
-    <h3>查看設備其他圖表：</h3>
+    <h3>查看設備用電直方圖：</h3>
     <p><a href="total_power_consumption_chart.html" target="_blank">點此查看各設備總用電量直方圖</a></p>
     <p><a href="power_consumption_pie_chart.html" target="_blank">點此查看各設備總用電量圓餅圖</a></p>
-
+    <p><a href="total_and_avg_power_consumption_chart.html" target="_blank">點此查看用電趨勢與平均值</a></p>
     <h3>每週迴歸分析</h3>
     <table border="4">
         <thead>
