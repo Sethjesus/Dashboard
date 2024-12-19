@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>碳排圖表</title>
+    <style>
+        /* CSS to create a 2x2 grid */
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            grid-gap: 20px; /* Space between images */
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 400%; /* Make the images responsive */
+            max-width: 700px; /* Set maximum width */
+        }
+    </style>
+</head>
+<body>
+    <h1>有線系統冰水主機用電與29 & 30號門牌用水量</h1>
+    
+    <div class="image-container">
+        <div>
+            <h2>用電趨勢圖</h2>
+            <img src="file:///D:\carbon_emissions\electricity_usage.png" alt="用電趨勢圖">
+        </div>
+        <div>
+            <h2>用水趨勢圖</h2>
+            <img src="file:///D:\carbon_emissions\water_usage.png" alt="用水趨勢圖">
+        </div>
+        <div>
+            <h2>水碳排趨勢圖</h2>
+            <img src="file:///D:\carbon_emissions\water_emissions.png" alt="水碳排趨勢圖">
+        </div>
+        <div>
+            <h2>電碳排趨勢圖</h2>
+            <img src="file:///D:\carbon_emissions\electricity_emissions.png" alt="電碳排趨勢圖">
+        </div>
+    </div>
+    
+</body>
+</html>
