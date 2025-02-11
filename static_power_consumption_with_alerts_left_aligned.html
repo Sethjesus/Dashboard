@@ -20156,9 +20156,6 @@
             for (let device in devices) {
                 const checkbox = document.getElementById("toggle-" + device);
                 const numberInput = document.getElementById("threshold-" + device);
-                const rangeInput = document.getElementById("slider-" + device);
-
-                rangeInput.value = numberInput.value;
 
                 if (checkbox.checked) {
                     let data = devices[device];
@@ -20168,7 +20165,7 @@
                         y: data.map(d => d["能耗 (kWh)"]),
                         mode: 'lines',
                         name: device,
-                        line: { color: colors[colorIndex % colors.length], width: 3 }
+                        line: { color: colors[colorIndex % colors.length], width: 3, shape: 'spline' }
                     });
 
                     let threshold = parseFloat(numberInput.value);
@@ -20201,19 +20198,18 @@
 
                 const threshold = parseFloat(numberInput.value);
                 const deviceData = devices[device];
-                let exceedDates = deviceData.filter(d => d["能耗 (kWh)"] > threshold).map(d => d["日期"]);
+
+                let exceedDates = deviceData
+                    .filter(d => parseFloat(d["能耗 (kWh)"]) > threshold)
+                    .map(d => d["日期"]);
 
                 if (exceedDates.length > 0) {
                     let alertMessage = document.createElement("p");
                     alertMessage.className = "alert fade-in";
-                    alertMessage.textContent = "⚠️ 警示: " + device + " 超過設定範圍！超過的日期: " + exceedDates.join(", ");
+                    alertMessage.textContent = `⚠️ 警示: ${device} 超過設定範圍！超過的日期: ${exceedDates.join(", ")}`;
                     alertContainer.appendChild(alertMessage);
                 }
             }
-        }
-
-        for (let device in devices) {
-            document.getElementById("toggle-" + device).addEventListener("change", updateChart);
         }
 
         updateChart();
